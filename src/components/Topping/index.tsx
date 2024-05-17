@@ -5,17 +5,20 @@ import './style.css';
 
 interface IToppingProps {
   topping: ITopping;
+  onSelectedChange: (selected: boolean) => void;
 }
 
-const Topping : React.FC<IToppingProps> = ({ topping }) => {
-  return (
-    <div className="topping">
-      <Check />
-      <span className="topping__content">
-        {topping.name}: {topping.price} €
-      </span>
-    </div>
-  );
+const Topping: React.FC<IToppingProps> = ({ topping, onSelectedChange }) => {
+  {
+    return (
+      <div className="topping">
+        <Check onChange={onSelectedChange} checked={topping.selected} />
+        <span className="topping__content">
+          {topping.name}: {topping.price} €
+        </span>
+      </div>
+    );
+  }
 };
 
 export default Topping;
