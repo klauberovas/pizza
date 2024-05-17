@@ -18,11 +18,12 @@ const ToppingsSelect: React.FC<IToppingsSelectProps> = ({ toppings }) => {
 
   let totalPrice = 0;
   let selectedToppings = 0;
-  toppingsData.map((topping) =>
-    topping.selected
-      ? ((totalPrice += topping.price), (selectedToppings += 1))
-      : null,
-  );
+  toppingsData.map((topping) => {
+    if (topping.selected) {
+      totalPrice += topping.price;
+      selectedToppings += 1;
+    }
+  });
 
   return (
     <>
