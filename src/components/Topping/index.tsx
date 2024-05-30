@@ -12,7 +12,11 @@ const Topping: React.FC<IToppingProps> = ({ topping, onSelectedChange }) => {
   {
     return (
       <div className="topping">
-        <Check onChange={onSelectedChange} checked={topping.selected} />
+        <Check
+          onChange={onSelectedChange}
+          checked={topping.selected}
+          isVegan={topping.vegan}
+        />
         <span className="topping__content">
           {topping.name}: {topping.price} €
         </span>

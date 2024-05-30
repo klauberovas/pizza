@@ -24,6 +24,7 @@ const ToppingsSelect: React.FC<IToppingsSelectProps> = ({ toppings }) => {
       selectedToppings += 1;
     }
   });
+  totalPrice = Math.round(totalPrice * 100) / 100;
 
   return (
     <>
